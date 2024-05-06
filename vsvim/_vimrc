@@ -1,0 +1,71 @@
+" --------------------------------------------------- options ---------------------------------------------------
+" Enable line numbers
+set number
+
+" Enable relative line numbers
+set relativenumber
+
+" search settings
+set incsearch
+set ignorecase
+set smartcase
+
+" yank to clipboard
+set clipboard=unnamed
+
+" Don't let the cursor scroll bellow or above N number of lines while scrolling
+set scrolloff=10
+
+" --------------------------------------------------- keymaps ---------------------------------------------------
+" Set space as leader key
+let mapleader = " "
+
+" Escape key mapping in insert mode
+inoremap jk <Esc>
+inoremap jj <Esc>
+
+" Remap Shift+U to redo in normal mode
+nnoremap <S-u> :redo<CR>
+
+" Move current line up or down in normal mode
+nnoremap <silent> <A-k> :m-2<CR>==
+nnoremap <silent> <A-j> :m+<CR>==
+
+" Move selected lines up or down in visual mode, stay in visual mode
+xnoremap <silent> <S-k> :move '<-2<CR>gv=gv
+xnoremap <silent> <S-j> :move '>+1<CR>gv=gv
+
+
+" Map <leader>w to save the file
+nnoremap <leader>w :w!<CR>
+
+" Map <leader>q to quit
+nnoremap <leader>q :q<CR>
+
+" Clear search highlights
+nnoremap <leader>nh :nohl<CR>
+
+" Window management.
+nnoremap <leader>- :split<CR>
+nnoremap <leader>\ :vsplit<CR>
+
+" Map leader key + h to focus on the pane to the left
+nnoremap <leader>h <C-W>h
+
+" Map leader key + l to focus on the pane to the right
+nnoremap <leader>l <C-W>l
+
+" Quick navigation
+nnoremap <Down> 5j
+nnoremap <Up> 5k
+
+" Indent selected lines in Visual mode and stay in Visual mode
+vnoremap < <gv
+vnoremap > >gv
+
+" center the cursor vertically when moving to next word during a search
+nnoremap n nzz
+nnoremap N Nzz
+
+" Yank from the cursor to the end of line
+nnoremap Y y$
