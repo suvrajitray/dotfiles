@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# .config (macOS)
+raycast/extensions
+.DS_Store
+iterm2/AppSupport
+github-copilot/
+ghc
