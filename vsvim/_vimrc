@@ -1,4 +1,4 @@
-" --------------------------------------------------- options ---------------------------------------------------
+" --------------------------------------------------- options --------------------------------------------------- 
 " Enable line numbers
 set number
 
@@ -9,6 +9,7 @@ set relativenumber
 set incsearch
 set ignorecase
 set smartcase
+set hlsearch
 
 " yank to clipboard
 set clipboard=unnamed
@@ -16,7 +17,8 @@ set clipboard=unnamed
 " Don't let the cursor scroll bellow or above N number of lines while scrolling
 set scrolloff=10
 
-" --------------------------------------------------- keymaps ---------------------------------------------------
+set backspace=indent,eol,start
+" --------------------------------------------------- keymaps --------------------------------------------------- 
 " Set space as leader key
 let mapleader = " "
 
@@ -27,14 +29,14 @@ inoremap jj <Esc>
 " Remap Shift+U to redo in normal mode
 nnoremap <S-u> :redo<CR>
 
+noremap j gj
+noremap k gk
+
 " Move current line up or down in normal mode
 nnoremap <silent> <A-k> :m-2<CR>==
 nnoremap <silent> <A-j> :m+<CR>==
-
-" Move selected lines up or down in visual mode, stay in visual mode
-xnoremap <silent> <S-k> :move '<-2<CR>gv=gv
-xnoremap <silent> <S-j> :move '>+1<CR>gv=gv
-
+nnoremap <silent> <A-Down> :m-2<CR>==
+nnoremap <silent> <A-Up> :m+<CR>==
 
 " Map <leader>w to save the file
 nnoremap <leader>w :w!<CR>
@@ -48,16 +50,14 @@ nnoremap <leader>nh :nohl<CR>
 " Window management.
 nnoremap <leader>- :split<CR>
 nnoremap <leader>\ :vsplit<CR>
+nnoremap <leader>sh :split<CR>
+nnoremap <leader>sv :vsplit<CR>
 
 " Map leader key + h to focus on the pane to the left
 nnoremap <leader>h <C-W>h
 
 " Map leader key + l to focus on the pane to the right
 nnoremap <leader>l <C-W>l
-
-" Quick navigation
-nnoremap <Down> 5j
-nnoremap <Up> 5k
 
 " Indent selected lines in Visual mode and stay in Visual mode
 vnoremap < <gv
@@ -69,3 +69,73 @@ nnoremap N Nzz
 
 " Yank from the cursor to the end of line
 nnoremap Y y$
+
+-- paste over currently selected text without yanking it
+xnoremap p "_dP
+xnoremap P "_dp
+
+"map enter to select all inside double quot"
+nnoremap <CR> vi"
+
+"map backspace to select all inside single quot"
+nnoremap <BS> vi'
+
+
+" -------------------------------- Visual Studio specific mappings --------------------------------
+" goto implementation
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+
+" find all references
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+
+" peak defination
+nnoremap gp :vsc Edit.PeekDefinition<CR>
+
+" rename
+nnoremap <leader>r :vsc Refactor.Rename<cr>
+
+" Undo and Redo
+nnoremap u :vsc Edit.Undo<CR>
+nnoremap <leader>u :vsc Edit.Undo<CR>
+nnoremap U :vsc Edit.Redo<CR>
+nnoremap <leader>U :vsc Edit.Redo<CR>
+
+" open solution explorer
+map <leader>e :vsc View.SolutionExplorer<CR>
+
+" previous and next tab
+nnoremap <S-h> gT
+nnoremap <S-l> gt
+
+" close current tab
+nnoremap <leader>q :vsc File.Close<CR>
+
+" save current tab
+noremap <leader>w :vsc File.SaveAll<CR>
+
+" open hover window when press K
+nnoremap K :vsc Edit.QuickInfo<CR>
+
+" break out of the tyranny of text! Navigate by method
+nnoremap <leader>m :vsc Edit.NextMethod<cr>
+nnoremap <leader>M :vsc Edit.PreviousMethod<cr>
+
+" rename
+nnoremap R :vsc Refactor.Rename<cr>
+
+" jump between compilation errors/warnings/diagnostics
+nnoremap [e :vsc View.NextError<cr>
+nnoremap ]e :vsc View.PreviousError<cr>
+nnoremap [w :vsc View.NextWarning<cr>
+nnoremap ]w :vsc View.PreviousWarning<cr>
+nnoremap [d :vsc View.NextDiagnostic<cr>
+nnoremap ]d :vsc View.PreviousDiagnostic<cr>
+
+" testing and debugging
+nnoremap <leader>db :vsc Debug.ToggleBreakpoint<cr>
+nnoremap <leader>tr :vsc TestExplorer.RunAllTestsInContext<cr>
+nnoremap <leader>tR :vsc TestExplorer.DebugAllTestsInContext<cr>
+
+" open the change parameter window, a bit fake because it's not a text-object
+nnoremap cia :vsc Refactor.ReorderParameters<cr>
+
