@@ -1,4 +1,4 @@
-" --------------------------------------------------- options --------------------------------------------------- 
+" --------------------------------------------------- options ---------------------------------------------------
 " Enable line numbers
 set number
 
@@ -18,16 +18,13 @@ set clipboard=unnamed
 set scrolloff=10
 
 set backspace=indent,eol,start
-" --------------------------------------------------- keymaps --------------------------------------------------- 
+" --------------------------------------------------- keymaps ---------------------------------------------------
 " Set space as leader key
 let mapleader = " "
 
 " Escape key mapping in insert mode
 inoremap jk <Esc>
 inoremap jj <Esc>
-
-" Remap Shift+U to redo in normal mode
-nnoremap <S-u> :redo<CR>
 
 noremap j gj
 noremap k gk
@@ -43,15 +40,16 @@ nnoremap <leader>w :w!<CR>
 
 " Map <leader>q to quit
 nnoremap <leader>q :q<CR>
+nnoremap <leader>bd :q<CR>
 
 " Clear search highlights
 nnoremap <leader>nh :nohl<CR>
 
 " Window management.
-nnoremap <leader>- :split<CR>
-nnoremap <leader>\ :vsplit<CR>
 nnoremap <leader>sh :split<CR>
 nnoremap <leader>sv :vsplit<CR>
+nnoremap <leader>wh :split<CR>
+nnoremap <leader>wv :vsplit<CR>
 
 " Map leader key + h to focus on the pane to the left
 nnoremap <leader>h <C-W>h
@@ -63,6 +61,12 @@ nnoremap <leader>l <C-W>l
 vnoremap < <gv
 vnoremap > >gv
 
+" move first charactor of line
+nnoremap <Left> ^
+
+" move last charactor of line
+nnoremap <Right> g_
+
 " center the cursor vertically when moving to next word during a search
 nnoremap n nzz
 nnoremap N Nzz
@@ -70,15 +74,19 @@ nnoremap N Nzz
 " Yank from the cursor to the end of line
 nnoremap Y y$
 
--- paste over currently selected text without yanking it
+" paste over currently selected text without yanking it
 xnoremap p "_dP
 xnoremap P "_dp
 
-"map enter to select all inside double quot"
-nnoremap <CR> vi"
+" Delete a character without affecting the register
+nnoremap <silent> x "_x
 
-"map backspace to select all inside single quot"
-nnoremap <BS> vi'
+
+"map backspace to select all inside double quot"
+nnoremap <BS> vi"
+
+"map enter to select all inside single quot"
+nnoremap <CR> vi'
 
 
 " -------------------------------- Visual Studio specific mappings --------------------------------
@@ -125,11 +133,17 @@ nnoremap R :vsc Refactor.Rename<cr>
 
 " jump between compilation errors/warnings/diagnostics
 nnoremap [e :vsc View.NextError<cr>
+nnoremap <leader>ce :vsc View.NextError<cr>
 nnoremap ]e :vsc View.PreviousError<cr>
+nnoremap <leader>cE :vsc View.PreviousError<cr>
 nnoremap [w :vsc View.NextWarning<cr>
+nnoremap <leader>cw :vsc View.NextWarning<cr>
 nnoremap ]w :vsc View.PreviousWarning<cr>
+nnoremap <leader>cW :vsc View.PreviousWarning<cr>
 nnoremap [d :vsc View.NextDiagnostic<cr>
+nnoremap <leader>cd :vsc View.NextDiagnostic<cr>
 nnoremap ]d :vsc View.PreviousDiagnostic<cr>
+nnoremap <leader>cD :vsc View.PreviousDiagnostic<cr>
 
 " testing and debugging
 nnoremap <leader>db :vsc Debug.ToggleBreakpoint<cr>
@@ -138,4 +152,3 @@ nnoremap <leader>tR :vsc TestExplorer.DebugAllTestsInContext<cr>
 
 " open the change parameter window, a bit fake because it's not a text-object
 nnoremap cia :vsc Refactor.ReorderParameters<cr>
-
