@@ -1,0 +1,56 @@
+" don't try to be vi comatible
+set nocompatible
+
+" set leader key to space
+let mapleader = " "
+
+" better escape
+inoremap jk <Esc>
+
+" enable clipboard support (requires +clipboard)
+set clipboard=unnamedplus
+
+" Yank to system clipboard using <leader>y
+nnoremap <leader>y "+yy
+vnoremap <leader>y "+y
+
+" paste from system clipboard using <leader>p
+nnoremap <leader>p "+p
+lnoremap <leader>p "+p
+
+nnoremap <leader>w :w!<CR>
+map <leader>e :Ex<CR>
+
+" turn on syntax highlighting
+syntax on
+set number
+set relativenumber
+set encoding=utf-8
+set wrap
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set copyindent
+set expandtab
+set noshiftround
+
+set hlsearch
+set incsearch
+set showmatch
+set smartcase
+
+set background=dark
+
+" note: turn it off if your terminal is very slow. it will show the command in right side.
+set showcmd
+
+" disable highlights when you press <leader><cr>:
+map <silent> <leader><cr> :noh<cr> 
+
+" smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
