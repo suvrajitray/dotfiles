@@ -5,8 +5,8 @@ font-size = 17
 font-family = Hack Nerd Font
 
 theme = dark:catppuccin-mocha,light:catppuccin-latte
-# theme = rose-pine 
-# theme = tokyonight 
+# theme = rose-pine
+# theme = tokyonight
 theme = "Solarized Dark - Patched"
 
 cursor-style = block
