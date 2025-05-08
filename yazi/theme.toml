@@ -1,2 +1,43 @@
 [flavor]
 dark = "catppuccin-mocha"
+
+# [ui]
+# background      = "#002b36"
+# foreground      = "#839496"
+# cursor          = "#93a1a1"
+# highlight       = "#268bd2"
+# title           = "#cb4b16"
+# border          = "#586e75"
+# status          = "#073642"
+# 
+# [syntax]
+# directory       = "#268bd2"
+# symlink         = "#6c71c4"
+# executable      = "#859900"
+# file            = "#93a1a1"
+# media           = "#2aa198"
+# archive         = "#d33682"
+# document        = "#b58900"
+# config          = "#cb4b16"
+# log             = "#839496"
+# hidden          = "#586e75"
+# 
+# [selection]
+# active_fg       = "#002b36"
+# active_bg       = "#b58900"
+# inactive_fg     = "#fdf6e3"
+# inactive_bg     = "#073642"
+# 
+# [status]
+# normal          = "#586e75"
+# error           = "#dc322f"
+# warning         = "#b58900"
+# info            = "#2aa198"
+# 
+# [progress]
+# bar_fg          = "#859900"
+# bar_bg          = "#073642"
+# 
+# [preview]
+# foreground      = "#839496"
+# background      = "#002b36"
