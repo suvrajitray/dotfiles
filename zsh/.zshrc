@@ -15,6 +15,9 @@ function y() {
   rm -f -- "$tmp"
 }
 
+# dotnet
+export DOTNET_ROOT=/usr/local/share/dotnet
+
 #aliases
 alias ls="eza --all --icons"
 alias cd="z"
