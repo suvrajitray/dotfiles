@@ -74,7 +74,8 @@ config.window_padding = {
 	bottom = "0cell",
 }
 
-config.color_scheme = "tokyonight"
+-- config.color_scheme = "tokyonight"
+config.color_scheme = "Solarized Dark - Patched"
 if is_darwin then
 	config.window_background_opacity = 0.95
 end
@@ -85,6 +86,7 @@ end
 
 -- misc
 config.max_fps = 120
+config.animation_fps = 120
 config.prefer_egl = true
 
 -- tmux
