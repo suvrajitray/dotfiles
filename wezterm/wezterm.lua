@@ -75,7 +75,8 @@ config.window_padding = {
 }
 
 -- config.color_scheme = "tokyonight"
-config.color_scheme = "Solarized Dark - Patched"
+-- config.color_scheme = "Solarized Dark - Patched"
+config.color_scheme = "Catppuccin Mocha"
 if is_darwin then
 	config.window_background_opacity = 0.95
 end
