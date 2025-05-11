@@ -4,10 +4,10 @@ background-blur-radius = 20
 font-size = 17
 font-family = Hack Nerd Font
 
-theme = dark:catppuccin-mocha,light:catppuccin-latte
+# theme = dark:catppuccin-mocha,light:catppuccin-latte
 # theme = rose-pine
 # theme = tokyonight
-# theme = "Solarized Dark - Patched"
+theme = "Solarized Dark - Patched"
 
 cursor-style = block
 cursor-style-blink = true
